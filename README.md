@@ -34,7 +34,7 @@ Replace the value of `os.environ['PYTHON_JULIACALL_SYSIMAGE']` to the actual loc
 ### Go to the followings to see how to [use in an LLM client](#-integration-with-llm-clients)
 
 ## 🖥️ Integration with LLM  Clients
- Open an LLM Client (Claude Desktop, 5ire, etc) and configure the MCP server:
+ Open an LLM Client ([Claude Desktop](https://claude.ai/download), [5ire](https://5ire.app/), etc) and configure the MCP server:
 - **Sever name**: `MCP_TN`
 - **Command**: `uv`
 - **Arguments**: `run mcp run /path/to/your/MCP_TN/main.py` _(Replace with your actual local path to `main.py`)_
