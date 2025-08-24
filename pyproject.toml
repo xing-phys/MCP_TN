@@ -1,0 +1,12 @@
+[project]
+name = "mcp-tn"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "juliacall>=0.9.27",
+    "mcp[cli]>=1.13.1",
+    "numpy>=2.3.2",
+    "uuid>=1.30",
+]
