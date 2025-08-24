@@ -31,16 +31,7 @@ vim MCP_TN/main.py
 ```
 Replace the value of `os.environ['PYTHON_JULIACALL_SYSIMAGE']` to the actual local path to `TenKits.so`
 
-### Test the server with inspector
-The following operations are in folder `MCP_TN` by default.
-Activate the virtual environment at first:
-```bash
-source .venv/bin/activate
-```
-Use the inspector to check the tools:
-```bash
-mcp dev main.py
-```
+### Go to the followings to see how to [use in an LLM client](#-integration-with-llm-clients)
 
 ## 🖥️ Integration with LLM  Clients
  Open an LLM Client (Claude Desktop, 5ire, etc) and configure the MCP server:
