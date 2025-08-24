@@ -10,8 +10,8 @@ using HDF5
 println("Precompiling function...")
 
 N = 10
-spin_type = "1"
-H_params = [1.0, 1.0, 1.0]
+spin_type = "1/2"
+H_params = [- 1.0, - 1.0, -0.5]
 
 sites = gen_lattice(N, spin_type)
 

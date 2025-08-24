@@ -28,7 +28,7 @@ def create_lattice_system(N: int, spin_type: str) -> TextContent:
         spin_type: the type of spin, e.g. "1/2", "1", "3/2", "2", ...
 
     Return:
-        The lattice system."""
+        The uri and the file path of the data of lattice sites."""
 
     from juliacall import Main as jl
     jl.seval("using ITensors, ITensorMPS")
@@ -84,7 +84,7 @@ def generate_Heisenberg_MPO(
     $\delta_x, \delta_y, \delta_z$ are the phase of the modulation.
 
     Args:
-        sites_id: the uri of site index data, e.g. "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+        sites_id: the UUID of site index data, with the form "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
         J: a list [Jx, Jy, Jz] where
         Jx: the parameter $J_x$, float number
         Jy: the parameter $J_y$, float number
@@ -156,7 +156,7 @@ def ground_energy_calculation(
     """Calculate the ground state of a generalized Heisenberg model with Hamiltonian:
 
     Args:
-        sites_id: the uri of site index data, e.g. "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+        sites_id: the UUID of site index data, e.g. "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
         mpo_id: the uri of MPO data, e.g. "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 
     Return:
@@ -202,7 +202,7 @@ def local_observable_measurement(
     """Calculate the local observable of the state psi:
 
     Args:
-        psi_id: the uri of MPS data of the state, e.g. "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+        psi_id: the UUID of MPS data of the state, e.g. "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
         observable: the local observable to be measured, e.g. "Sz", "Sx", "Sy", "S+", "S-"
 
     Return:
@@ -232,7 +232,7 @@ def entanglement_entropy_calculation(
      the two subsystems of is seperated at the given site:
 
     Args:
-        psi_id: the uri of MPS data of the state, e.g. "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+        psi_id: the UUID of MPS data of the state, e.g. "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
         c: integer in [2, N-1], subsystem A contains sites [1, c-1], subsystem B contains sites [c, N]
 
     Return:
@@ -264,7 +264,7 @@ def correlation_function_calculation(
      where $C_{ij} = \langle op1_i op2_j \rangle$ with respect to the state psi,:
 
     Args:
-        psi_id: the uri of MPS data of the state, e.g. "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+        psi_id: the UUID of MPS data of the state, e.g. "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
         op1: the first operator in the correlation function, e.g. "S+", "S-", "Sz", "Sx", "Sy"
         op2: the second operator in the correlation function, e.g. "S+", "S-", "Sz", "Sx", "Sy"
 
@@ -329,7 +329,7 @@ def time_evolution_simulation_entanglement_entropy(
 
 
     Args:
-        sites_id: the uri of site index data, e.g. "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+        sites_id: the UUID of site index data, with the form "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
         state_init: a list of length N, each element is the initial state on each site, e.g. ["Up", "Dn", "Up", ...]
         c: integer in [2, N-1], subsystem A contains sites [1, c-1], subsystem B contains sites [c, N]
         J: a list [Jx, Jy, Jz] where

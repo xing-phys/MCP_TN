@@ -32,7 +32,7 @@ module TenKits
                 if j + d > N
                     break
                 end
-                Jz = J[1] * (1 + A[3] * cos(2π * α[3] * j + δ[3])) / d^(K[3])
+                Jz = J[3] * (1 + A[3] * cos(2π * α[3] * j + δ[3])) / d^(K[3])
                 os += Jz, "Sz", j, "Sz", j+d
             end
             for d in 1:D[1]
