@@ -9,7 +9,7 @@ using HDF5
 
 println("Precompiling function...")
 
-N = 10
+N = 50
 spin_type = "1/2"
 H_params = [- 1.0, - 1.0, -0.5]
 
@@ -21,12 +21,12 @@ h = H_MPO(sites, H_params)
 
 println("Ground state energy: ", energy)
 
-state_init = ["Up", "Dn", "Up", "Dn", "Up", "Dn", "Up", "Dn", "Up", "Dn"]
-@time ee = Evolution_TEBD(sites, state_init, 5, H_params; hz=1.)
-println(ee)
+# state_init = ["Up", "Dn", "Up", "Dn", "Up", "Dn", "Up", "Dn", "Up", "Dn"]
+# @time ee = Evolution_TEBD(sites, state_init, 5, H_params; hz=1.)
+# println(ee)
 
-@time tet4 = measure_local(psi, "Sz")
+# @time tet4 = measure_local(psi, "Sz")
 
-@time entanglement_entropy(psi, 5)
+# @time entanglement_entropy(psi, 5)
 
-@time tet = Greenf(psi, "S+", "S-")
+# @time tet = Greenf(psi, "S+", "S-")

@@ -1,5 +1,5 @@
 import os
-os.environ['PYTHON_JULIACALL_SYSIMAGE'] = '/Users/xingzy/Documents/UVS/MCP_TN/TenKits.so'  # Or use -X juliacall-sysimage=mysysimage.so when running Python
+os.environ['PYTHON_JULIACALL_SYSIMAGE'] = '/absolute/path/to/the/folder/TenKits.so'  # Or use -X juliacall-sysimage=mysysimage.so when running Python
 
 import uuid
 from mcp.server.fastmcp import FastMCP
@@ -274,6 +274,7 @@ def correlation_function_calculation(
     from juliacall import Main as jl
     jl.seval("using ITensors, ITensorMPS")
     jl.seval("using .TenKits")
+    jl.seval("using DataFrames, CSV")
     jl.seval("using HDF5")
     psi_file_path = f"/tmp/{psi_id}.h5"
     jl.psi_fname = psi_file_path
